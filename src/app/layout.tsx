@@ -1,12 +1,11 @@
 import type { Metadata } from "next";
 import "./globals.css";
+import { DM_Sans } from 'next/font/google'
 
-// TODO: Add local font as body variable
-// const geistSans = localFont({
-//   src: "./fonts/GeistVF.woff",
-//   variable: "--font-geist-sans",
-//   weight: "100 900",
-// });
+const dmSans = DM_Sans({
+  weight: ["300", "400", "500", "600", "700"],
+  subsets: ["latin"],
+})
 
 export const metadata: Metadata = {
   title: "Create Next App",
@@ -20,7 +19,7 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en">
-      <body className={`antialiased`}>{children}</body>
+      <body className={`${dmSans.className} antialiased bg-background min-h-screen`}>{children}</body>
     </html>
   );
 }
