@@ -31,9 +31,9 @@ const Navbar = () => {
         <div className="mx-auto flex justify-between items-center">
           <a className="flex items-center text-2xl gap-x-4 " href="/">
             <Image
-              width={40}
-              height={49.27}
-              src="/icons/Logo.svg"
+              width={108.23}
+              height={27}
+              src="/icons/BrandingLogo.svg"
               alt="Evergrow Logo"
               loading="lazy"
             />
