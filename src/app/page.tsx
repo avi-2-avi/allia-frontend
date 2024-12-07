@@ -1,3 +1,5 @@
+import ChatPrompt from "@/app/components/form/ChatPrompt";
+
 export default function Home() {
   return <div className="">
     <p className={"bg-primary"}>Hello</p>
@@ -9,5 +11,9 @@ export default function Home() {
     <p className={"bg-warning-muted"}>Hello</p>
     <p className={"bg-danger"}>Hello</p>
     <p className={"bg-danger-muted"}>Hello</p>
+    <div className={"w-[500px]"}>
+      <ChatPrompt />
+
+    </div>
   </div>;
 }
