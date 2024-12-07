@@ -20,11 +20,12 @@ export default function Home() {
         <div className={"w-[500px]"}>
           <ChatPrompt />
         </div>
-        <Button text={"Butoncito"} style={"PRIMARY"}/>
-            <div className={"flex flex-col space-y-2 p-2"}>
-                <Alert label={"Esto es tan xdddd"} type={"warning"}/>
-                <Alert label={"Esto es tan xdddd"} type={"error"}/>
-            </div>
+        <Button text={"Butoncito"} style={"PRIMARY"} />
+        <div className={"flex flex-col space-y-2 p-2"}>
+          <Alert label={"Esto es tan xdddd"} type={"warning"} />
+          <Alert label={"Esto es tan xdddd"} type={"error"} />
+        </div>
       </section>
     </div>
   );
+}
