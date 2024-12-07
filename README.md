@@ -1,36 +1,85 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
+<p align="center">
+  <a href="" rel="noopener">
+ <img src="public/icons/BigLogo.svg" alt="Project logo" width="175"></a>
+</p>
+<h3 align="center">AlliA</h3>
 
-## Getting Started
+---
 
-First, run the development server:
+<p align="center"> Few lines describing your project.
+    <br> 
+</p>
 
-```bash
-npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
+## 📝 Table of Contents
+
+- [Problem Statement](#problem_statement)
+- [Idea / Solution](#idea)
+- [Future Scope](#future_scope)
+- [Setting up a local environment](#getting_started)
+- [Project Structure](#project_structure)
+- [Technology Stack](#tech_stack)
+- [Authors](#authors)
+
+## 🧐 Problem Statement <a name = "problem_statement"></a>
+
+It is useful to design and follow a specific format when writing a problem statement. While there are several options
+for doing this, the following is a simple and straightforward template often used in Business Analysis to maintain
+focus on defining the problem.
+
+- IDEAL: This section is used to describe the desired or “to be” state of the process or product. At large, this section
+  should illustrate what the expected environment would look like once the solution is implemented.
+- REALITY: This section is used to describe the current or “as is” state of the process or product.
+- CONSEQUENCES: This section is used to describe the impacts on the business if the problem is not fixed or improved upon.
+  This includes costs associated with loss of money, time, productivity, competitive advantage, and so forth.
+
+Following this format will result in a workable document that can be used to understand the problem and elicit
+requirements that will lead to a winning solution.
+
+## 💡 Idea / Solution <a name = "idea"></a>
+
+This section is used to describe potential solutions.
+
+Once the ideal, reality, and consequences sections have been
+completed, and understood, it becomes easier to provide a solution for solving the problem.
+
+## 🚀 Future Scope <a name = "future_scope"></a>
+
+Write about what you could not develop during the course of the Hackathon; and about what your project can achieve
+in the future.
+
+## 🏁 Getting Started <a name = "getting_started"></a>
+
+1. Open the command prompt and clone the repository:
+
+```
+git clone https://github.com/Loomin-Team/allia-frontend
 ```
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+2. Navigate to the project directory.
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+3. Run the following command to install the necessary dependencies listed in the package.json file:
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+```
+pnpm install
+```
 
-## Learn More
+4. Open your browser and navigate to http://localhost:3000/ to see the application running.
 
-To learn more about Next.js, take a look at the following resources:
+## 📐 Project Structure <a name="project_structure"></a>
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+```
+.
+└── src
+    └── app
+        └── components
+```
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
+## ⛏️ Technology Stack <a name = "tech_stack"></a>
 
-## Deploy on Vercel
+- [Next.js](https://nextjs.org/) - React Framework for building Web applications.
+- [Tailwind CSS](https://tailwindcss.com/) - Open-source CSS framework.
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
+## ✍️ Authors <a name = "authors"></a>
 
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+- [@alanegd](https://github.com/alanegd)
+- [@avi-2-avi](https://github.com/avi-2-avi)
