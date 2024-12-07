@@ -1,6 +1,7 @@
 import ChatPrompt from "@/app/components/form/ChatPrompt";
 import Button from "./components/ui/Button";
 import Navbar from "./components/ui/Navbar";
+import Alert from "@/app/components/data-display/Alert";
 
 export default function Home() {
   return (
@@ -19,12 +20,11 @@ export default function Home() {
         <div className={"w-[500px]"}>
           <ChatPrompt />
         </div>
-        <div className="flex gap-3">
-          <Button text={"Upload"} style={"PRIMARY"} />
-          <Button text={"Upload"} style={"SECONDARY"} />
-          <Button text={"Upload"} style={"SECONDARY"} disabled={true} />
-        </div>
+        <Button text={"Butoncito"} style={"PRIMARY"}/>
+            <div className={"flex flex-col space-y-2 p-2"}>
+                <Alert label={"Esto es tan xdddd"} type={"warning"}/>
+                <Alert label={"Esto es tan xdddd"} type={"error"}/>
+            </div>
       </section>
     </div>
   );
-}

@@ -1,6 +1,6 @@
 <p align="center">
   <a href="" rel="noopener">
- <img src="public/icons/Logo.svg" alt="Project logo" width="175"></a>
+ <img src="public/icons/BigLogo.svg" alt="Project logo" width="175"></a>
 </p>
 <h3 align="center">AlliA</h3>
 
