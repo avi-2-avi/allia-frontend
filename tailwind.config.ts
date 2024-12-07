@@ -25,6 +25,7 @@ export default {
           DEFAULT: "var(--danger)",
           muted: "var(--danger-muted)",
         },
+      "input-border": "var(--input-border)"
     },
   },
   plugins: [],

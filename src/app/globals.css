@@ -13,6 +13,7 @@
   --warning-muted: #3b2a0d;
   --danger: #ef4444;
   --danger-muted: #3b0d0d;
+  --input-border: #484848;
 }
 
 body {
