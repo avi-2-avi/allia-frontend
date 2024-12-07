@@ -1,4 +1,5 @@
 import ChatPrompt from "@/app/components/form/ChatPrompt";
+import Alert from "@/app/components/data-display/Alert";
 
 export default function Home() {
   return <div className="">
@@ -13,6 +14,10 @@ export default function Home() {
     <p className={"bg-danger-muted"}>Hello</p>
     <div className={"w-[500px]"}>
       <ChatPrompt />
+    </div>
+    <div>
+      <Alert label={"This is so xd"} type={"warning"}/>
+      <Alert label={"This is so xd"} type={"warning"}/>
 
     </div>
   </div>;
