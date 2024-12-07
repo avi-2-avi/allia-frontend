@@ -2,11 +2,11 @@ import ChatPrompt from "@/app/components/form/ChatPrompt";
 import Button from "./components/ui/Button";
 import Navbar from "./components/ui/Navbar";
 import Alert from "@/app/components/data-display/Alert";
+import BaseLayout from "./shared/layouts/BaseLayout";
 
 export default function Home() {
   return (
-    <div className="">
-      <Navbar />
+    <BaseLayout>
       <section className="mt-24">
         <p className={"bg-primary"}>Hello</p>
         <p className={"bg-secondary"}>Hello</p>
@@ -26,6 +26,6 @@ export default function Home() {
           <Alert label={"Esto es tan xdddd"} type={"error"} />
         </div>
       </section>
-    </div>
+    </BaseLayout>
   );
 }
