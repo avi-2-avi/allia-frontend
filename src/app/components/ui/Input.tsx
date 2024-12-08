@@ -8,6 +8,7 @@ interface InputProps {
   name?: string;
   placeholder: string;
   value?: string;
+  autocomplete?: boolean;
 }
 
 const Input: React.FC<InputProps> = ({
@@ -16,6 +17,7 @@ const Input: React.FC<InputProps> = ({
   name,
   placeholder,
   value,
+  autocomplete,
 }) => {
   return (
     <div>
@@ -27,6 +29,7 @@ const Input: React.FC<InputProps> = ({
         name={name}
         placeholder={placeholder}
         value={value === undefined ? undefined : value}
+        autoComplete={autocomplete ? "on" : "off"} // Conversión aquí
       />
     </div>
   );
