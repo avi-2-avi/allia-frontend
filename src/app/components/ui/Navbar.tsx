@@ -29,7 +29,7 @@ const Navbar = () => {
     return (
         <div className="fixed top-0 w-full z-50 backdrop-blur-sm h-[72px]">
             {/* TODO: Add the correct hyperlinks */}
-            <nav className="px-6 md:px-10 py-6">
+            <nav className={`px-8 xl:px-0 xl:max-w-[1320px] xl:mx-auto py-6`}>
                 <div className="mx-auto flex justify-between items-center">
                     <Link href={"/"} className="flex items-center text-2xl gap-x-4">
                         <Image

@@ -2,10 +2,33 @@ import Button from "./components/ui/Button";
 import BaseLayout from "./shared/layouts/BaseLayout";
 import FeatureCard from "@/app/components/ui/FeatureCard";
 import Image from "next/image";
-import Card from "@/app/components/content/Card";
 import Generator from "@/app/components/content/Generator";
 
 export default function Home() {
+
+    // Feature data
+    const features = [
+        {
+            title: "AI-Powered Generation",
+            description: "Create content automatically from any topic using advanced AI",
+            icon: "/icons/Robot.svg",
+        },
+        {
+            title: "Trend Analysis",
+            description: "Stay updated with real-time trends and news across various domains",
+            icon: "/icons/TrendUp.svg",
+        },
+        {
+            title: "Multi-Domain Coverage",
+            description: "Generate content for any industry, niche, or subject matter",
+            icon: "/icons/World.svg",
+        },
+        {
+            title: "Multi-format Export",
+            description: "Generate content in various formats ready to share on any platform",
+            icon: "/icons/Share.svg",
+        },
+    ]
 
     return (
         <BaseLayout>
@@ -33,62 +56,21 @@ export default function Home() {
                         "grid grid-cols-1 sm:grid-cols-[repeat(2,_minmax(0,_max-content))] xl:grid-cols-[repeat(auto-fit,_minmax(0,_max-content))] justify-items-center justify-center gap-5"
                     }
                 >
-                    <FeatureCard
-                        title={"AI-Powered Generation"}
-                        description={
-                            "Create content automatically from any topic using advanced AI"
-                        }
-                        icon={
-                            <Image
-                                src={"/icons/Robot.svg"}
-                                alt={"Robot logo"}
-                                width={67}
-                                height={67}
-                            />
-                        }
-                    />
-                    <FeatureCard
-                        title={"Trend Analysis"}
-                        description={
-                            "Stay updated with real-time trends and news across various domains"
-                        }
-                        icon={
-                            <Image
-                                src={"/icons/TrendUp.svg"}
-                                alt={"Trend logo"}
-                                width={67}
-                                height={67}
-                            />
-                        }
-                    />
-                    <FeatureCard
-                        title={"Multi-Domain Coverage"}
-                        description={
-                            "Generate content for any industry, niche, or subject matter"
-                        }
-                        icon={
-                            <Image
-                                src={"/icons/World.svg"}
-                                alt={"World logo"}
-                                width={67}
-                                height={67}
-                            />
-                        }
-                    />
-                    <FeatureCard
-                        title={"Multi-format Export"}
-                        description={
-                            "Generate content in various formats ready to share on any platform"
-                        }
-                        icon={
-                            <Image
-                                src={"/icons/Share.svg"}
-                                alt={"Share logo"}
-                                width={67}
-                                height={67}
-                            />
-                        }
-                    />
+                    {features.map((feature, index) => (
+                        <FeatureCard
+                            key={index}
+                            title={feature.title}
+                            description={feature.description}
+                            icon={
+                                <Image
+                                    src={feature.icon}
+                                    alt={`${feature.title} logo`}
+                                    width={67}
+                                    height={67}
+                                />
+                            }
+                        />
+                    ))}
                 </div>
             </section>
             {/* Content Generator */}

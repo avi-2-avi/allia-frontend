@@ -7,9 +7,9 @@ type BaseLayoutProps = {
 
 const BaseLayout: React.FC<BaseLayoutProps> = ({ children }) => {
   return (
-    <div className="grid grid-rows-[auto_1fr] min-h-dvh">
+    <div className="min-h-dvh">
       <Navbar />
-      <main>{children}</main>
+      <main className={"mx-auto max-w-[1320px]"}>{children}</main>
     </div>
   );
 };

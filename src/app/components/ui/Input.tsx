@@ -13,7 +13,7 @@ interface InputProps {
 const Input = forwardRef<HTMLInputElement, InputProps>(
   ({ type = "text", id, name, placeholder, autocomplete }, ref) => {
     return (
-      <div>
+      <div className={"w-full"}>
         <p className="text-foreground-secondary mb-2">{placeholder}</p>
         <input
           className="w-full bg-secondary py-2 px-6 border border-input-border rounded-full"
