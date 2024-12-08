@@ -6,11 +6,11 @@ export default function Home() {
         <BaseLayout>
             {/* Hero */}
             <section className="flex h-screen mt-24 items-center">
-                <div className={"w-[800px] mx-auto"}>
+                <div className={"max-w-[800px] mx-auto px-4"}>
                     <h1 className={"mb-10"}>Engage Your Audience with AI-Generated Content</h1>
                     <p className={"subheading mb-20"}>Create compelling content on any topic in seconds. Powered by AI,
                         designed for content creators.</p>
-                    <div className={"flex flex-row space-x-5 justify-center"}>
+                    <div className={"flex flex-col space-y-5 md:space-y-0 md:flex-row md:space-x-5 justify-center items-center"}>
                         <Button className={"w-44"} text={"Try it now"} style={"PRIMARY"}/>
                         <Button className={"w-44"} text={"Learn More"} style={"TERTIARY"}/>
                     </div>
