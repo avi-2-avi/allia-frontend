@@ -1,17 +1,17 @@
 import React from 'react'
 import Button from "@/app/components/ui/Button";
 
-interface ContentCardProps {
+interface CardProps {
     title: string
     icon: React.ReactNode
     isPremium?: boolean
     isSelected?: boolean
 }
 
-const ContentCard: React.FC<ContentCardProps> = ({title, icon, isPremium = false, isSelected = false}) => {
+const Card: React.FC<CardProps> = ({title, icon, isPremium = false, isSelected = false}) => {
     return (
         <div
-            className={`relative rounded-3xl ${isSelected ? "bg-primary" : "bg-tertiary"} w-[300px] h-[214px] flex flex-col justify-center items-center`}>
+            className={`relative rounded-3xl ${isSelected ? "bg-primary" : "bg-tertiary"} w-[310px] h-[214px] flex flex-col justify-center items-center`}>
             {icon}
             <p className={"text-xl font-bold mt-5 w-52 text-center"}>{title}</p>
             {
@@ -22,4 +22,4 @@ const ContentCard: React.FC<ContentCardProps> = ({title, icon, isPremium = false
         </div>
     )
 }
-export default ContentCard
+export default Card

@@ -2,7 +2,8 @@ import Button from "./components/ui/Button";
 import BaseLayout from "./shared/layouts/BaseLayout";
 import FeatureCard from "@/app/components/ui/FeatureCard";
 import Image from "next/image";
-import ContentCard from "@/app/components/ui/ContentCard";
+import Card from "@/app/components/content/Card";
+import Generator from "@/app/components/content/Generator";
 
 export default function Home() {
 
@@ -24,7 +25,8 @@ export default function Home() {
             {/* Features */}
             <section className="min-h-screen py-20">
                 <h2 className="text-center">Features</h2>
-                <p className={"text-xl text-foreground-secondary text-center mb-16 mt-3 mx-4"}>Everything you need to create
+                <p className={"text-xl text-foreground-secondary text-center mb-16 mt-3 mx-4"}>Everything you need to
+                    create
                     engaging content on any topic</p>
                 <div
                     className={
@@ -93,50 +95,9 @@ export default function Home() {
             <section className="min-h-screen">
                 <h2 className="text-center">Content Generator</h2>
                 <p></p>
-                <p className={"text-xl text-foreground-secondary text-center mb-16 mt-3 mx-4"}>Try our AI-powered content generator now</p>
-                <div
-                    className={
-                        "grid grid-cols-1 sm:grid-cols-[repeat(2,_minmax(0,_max-content))] xl:grid-cols-[repeat(auto-fit,_minmax(0,_max-content))] justify-items-center justify-center gap-5"
-                    }
-                >
-                    <ContentCard isSelected title={"Text Content"} icon={
-                        <Image
-                            src={"/icons/Text.svg"}
-                            alt={"Text logo"}
-                            width={45}
-                            height={45}
-                        />
-                    }
-                    />
-                    <ContentCard isPremium title={"Short Video"} icon={
-                        <Image
-                            src={"/icons/Video.svg"}
-                            alt={"Video logo"}
-                            width={40}
-                            height={40}
-                        />
-                    }
-                    />
-                    <ContentCard isPremium title={"X Thread"} icon={
-                        <Image
-                            src={"/icons/X.svg"}
-                            alt={"X logo"}
-                            width={45}
-                            height={45}
-                        />
-                    }
-                    />
-                    <ContentCard title={"Meme"} icon={
-                        <Image
-                            src={"/icons/Ghost.svg"}
-                            alt={"Ghost logo"}
-                            width={45}
-                            height={50}
-                        />
-                    }
-                    />
-                </div>
-
+                <p className={"text-xl text-foreground-secondary text-center mb-16 mt-3 mx-4"}>Try our AI-powered
+                    content generator now</p>
+                <Generator/>
             </section>
             {/* Trending */}
             {/* Pricing */}
