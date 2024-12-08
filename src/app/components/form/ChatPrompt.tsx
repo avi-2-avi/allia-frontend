@@ -5,7 +5,11 @@ import Image from "next/image";
 import { ToastContainer, toast } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
 
-const ChatPrompt: React.FC = () => {
+interface ChatPromptProps {
+  onSendMessage: (message: string) => void;  
+}
+
+const ChatPrompt: React.FC<ChatPromptProps> = ({ onSendMessage }) => {
   const [prompt, setPrompt] = useState<string>("");
 
   const handleSubmit = (event: FormEvent<HTMLFormElement>) => {
@@ -23,8 +27,8 @@ const ChatPrompt: React.FC = () => {
       return;
     }
 
-    console.log("Do something:", prompt);
-    setPrompt("");
+    onSendMessage(prompt);
+    setPrompt("");  
   };
 
   const handleChange = (event: ChangeEvent<HTMLInputElement>) => {
