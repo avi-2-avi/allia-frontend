@@ -4,7 +4,8 @@
 
 :root {
   --background: #0A0A0A;
-  --foreground: #979EAB;
+  --foreground: #ffffff;
+  --foreground-secondary: #979EAB;
   --white: #ffffff;
   --black: #000000;
   --foreground-muted: #737373;
@@ -35,7 +36,7 @@ h1 {
 }
 
 .subheading {
-  color: var(--foreground);
+  color: var(--foreground-secondary);
   text-align: center;
   font-size: 30px;
   font-style: normal;
