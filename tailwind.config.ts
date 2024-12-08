@@ -7,7 +7,11 @@ export default {
         "./src/app/**/*.{js,ts,jsx,tsx,mdx}",
     ],
     theme: {
-        extend: {},
+        extend: {
+            maxWidth: {
+                "generator": "var(--generator-max-width)",
+            }
+        },
         colors: {
             transparent: "transparent",
             background: "var(--background)",
@@ -23,7 +27,10 @@ export default {
                 muted: "var(--primary-muted)"
             },
             secondary: "var(--secondary)",
-            tertiary: "var(--tertiary)",
+            tertiary: {
+                DEFAULT: "var(--tertiary)",
+                muted: "var(--tertiary-muted)",
+            },
             accent: "var(--accent)",
             warning: {
                 DEFAULT: "var(--warning)",
