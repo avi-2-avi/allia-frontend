@@ -10,7 +10,7 @@ export const login = async (
   | { status: "error"; message: string }
 > => {
   try {
-    const response = await axios.post(`${API_BASE_URL}/api/login`, {
+    const response = await axios.post(`${API_BASE_URL}/api/v1/auth/sign-in`, {
       email,
       password,
     });
