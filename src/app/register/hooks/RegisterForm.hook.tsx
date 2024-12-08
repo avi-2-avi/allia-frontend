@@ -45,9 +45,7 @@ export const useRegisterForm = () => {
       });
 
       if (res.status === "success") {
-        setTimeout(() => {
-          router.push("/login");
-        }, 1500);
+        router.push("/login");
       }
     } catch (error) {
       toast.error("An error occurred. Please try again later.");
