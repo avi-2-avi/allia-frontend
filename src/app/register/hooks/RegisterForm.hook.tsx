@@ -3,10 +3,10 @@ import { useRef, useState, FormEvent, RefObject } from "react";
 import { toast } from "react-toastify";
 import { areValidHtmlInputRefs } from "@/app/shared/services/ref-validation.service";
 import { useRouter } from "next/navigation";
-import { register } from "@/app/register/services/register.service";
+import { register } from "../services/register.service";
 
 export const useRegisterForm = () => {
-  const nameRef = useRef<HTMLInputElement>(null);
+  const fullnameRef = useRef<HTMLInputElement>(null);
   const emailRef = useRef<HTMLInputElement>(null);
   const passwordRef = useRef<HTMLInputElement>(null);
   const [isRegistering, setIsRegistering] = useState(false);
@@ -18,7 +18,7 @@ export const useRegisterForm = () => {
 
     if (
       !areValidHtmlInputRefs([
-        nameRef as RefObject<HTMLInputElement>,
+        fullnameRef as RefObject<HTMLInputElement>,
         emailRef as RefObject<HTMLInputElement>,
         passwordRef as RefObject<HTMLInputElement>,
       ])
@@ -32,7 +32,7 @@ export const useRegisterForm = () => {
 
     try {
       const res = await register({
-        name: nameRef.current!.value,
+        fullname: fullnameRef.current!.value,
         email: emailRef.current!.value,
         password: passwordRef.current!.value,
       });
@@ -57,7 +57,7 @@ export const useRegisterForm = () => {
   };
 
   return {
-    nameRef,
+    fullnameRef,
     emailRef,
     passwordRef,
     isRegistering,

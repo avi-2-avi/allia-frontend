@@ -7,7 +7,7 @@ import Link from "next/link";
 import { useRegisterForm } from "../hooks/RegisterForm.hook";
 
 const RegisterForm = () => {
-  const { nameRef, emailRef, passwordRef, isRegistering, onSubmit } =
+  const { fullnameRef, emailRef, passwordRef, isRegistering, onSubmit } =
     useRegisterForm();
 
   return (
@@ -20,12 +20,12 @@ const RegisterForm = () => {
           onSubmit={onSubmit}
         >
           <Input
-            placeholder="Name"
-            id="name"
-            name="name"
+            placeholder="Full Name"
+            id="fullname"
+            name="fullname"
             type="text"
             autocomplete={true}
-            ref={nameRef}
+            ref={fullnameRef}
           />
           <Input
             placeholder="Email"
