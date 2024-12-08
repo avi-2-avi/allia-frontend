@@ -26,7 +26,7 @@ const Navbar = () => {
   }, []);
 
   return (
-    <div className="fixed top-0 w-full z-50 bg-secondary">
+    <div className="fixed top-0 w-full z-50 backdrop-blur-sm h-[72px]">
       <nav className="px-6 md:px-10 py-6">
         <div className="mx-auto flex justify-between items-center">
           <a className="flex items-center text-2xl gap-x-4 " href="/">
