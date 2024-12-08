@@ -1,7 +1,7 @@
 "use client";
 import React, {useState, useEffect} from "react";
 import Image from "next/image";
-import Button from "./Button";
+import Button from "../ui/Button";
 import Link from "next/link";
 
 const Navbar = () => {
@@ -31,7 +31,7 @@ const Navbar = () => {
             {/* TODO: Add the correct hyperlinks */}
             <nav className={`px-8 xl:px-0 xl:max-w-[1320px] xl:mx-auto py-6`}>
                 <div className="mx-auto flex justify-between items-center">
-                    <Link href={"/"} className="flex items-center text-2xl gap-x-4">
+                    <Link href={"/public"} className="flex items-center text-2xl gap-x-4">
                         <Image
                             width={108.23}
                             height={27}

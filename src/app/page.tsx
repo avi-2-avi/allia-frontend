@@ -1,13 +1,23 @@
+"use client";
 import Button from "./components/ui/Button";
 import BaseLayout from "./shared/layouts/BaseLayout";
 import FeatureCard from "@/app/components/ui/FeatureCard";
 import Image from "next/image";
 import Generator from "@/app/components/content/Generator";
 import TrendingCard from "@/app/components/ui/TrendingCard";
+import Footer from "@/app/components/navigation/Footer";
+import PricingCard from "@/app/components/ui/PricingCard";
+import {useRouter} from "next/navigation";
 
 export default function Home() {
     const today = new Date();
     const todayDate = `${today.getMonth() + 1}/${today.getDate()}/${today.getFullYear()}`;
+
+    const router = useRouter();
+
+    const onGoToLogin = () => {
+        router.push("/login");
+    }
 
     // Feature data
     const features = [
@@ -107,6 +117,7 @@ export default function Home() {
                     content generator now</p>
                 <Generator/>
                 {/* TODO: Adjust preview (what functionality will it actually show? */}
+{/*
                 <div className={"max-w-generator xl:max-w-full mx-auto mt-8 px-4 xl:px-0"}>
                     <div className={"bg-tertiary p-10 rounded-3xl"}>
                         <div className={"flex flex-row justify-between mb-14"}>
@@ -118,6 +129,7 @@ export default function Home() {
                         </div>
                     </div>
                 </div>
+*/}
             </section>
             {/* Trending */}
             <section className="min-h-screen py-20">
@@ -144,6 +156,30 @@ export default function Home() {
 
             </section>
             {/* Pricing */}
+            <section className={"min-h-[80vh] py-20"}>
+                <h2>Pricing Plans</h2>
+                <div className={"grid grid-cols-1 lg:grid-cols-[repeat(2,_minmax(0,_max-content))] gap-10 justify-items-center justify-center mt-16 px-4 md:px-0"}>
+                    <PricingCard title={"Free"} type={"Basic"} description={
+                        <p className={"flex flex-col text-xl text-foreground-secondary"}>
+                            <span>Text Generation</span>
+                            <span>Meme Generation</span>
+                            <span>Limited Trends Access</span>
+                        </p>
+                    } buttonText={"Get Started"} buttonAction={() => router.push("/login")}/>
+                    <PricingCard title={"Premium"} type={"$9.99/m"} description={
+                        <p className={"flex flex-col text-xl text-foreground-secondary"}>
+                            <span>Text Generation</span>
+                            <span>Meme Generation</span>
+                            <span>X Threads Generation</span>
+                            <span>Video Generation</span>
+                            <span>Full Trends Access</span>
+                            <span>Priority Support</span>
+                        </p>
+                    } buttonText={"Upgrade Now"} buttonAction={() => onGoToLogin()}/>
+                </div>
+
+            </section>
+            <Footer/>
         </BaseLayout>
     );
 }

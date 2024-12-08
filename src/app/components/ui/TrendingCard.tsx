@@ -9,7 +9,7 @@ interface TrendingCardProps {
 
 const TrendingCard: React.FC<TrendingCardProps> = ({title, description, percentage}) => {
     return (
-        <div className={"bg-tertiary p-5 rounded-3xl w-[480px]"}>
+        <div className={"bg-tertiary p-5 rounded-3xl max-w-[480px] mx-4 sm:mx-0"}>
             <div className={"flex flex-row justify-between"}>
                 <h4 className={"max-w-[178px] text-start"}>{title}</h4>
                 <div className={"flex flex-col justify-top items-end"}>
