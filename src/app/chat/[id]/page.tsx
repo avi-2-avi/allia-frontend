@@ -81,7 +81,7 @@ const ChatPage = () => {
   return (
     <div className="flex flex-col gap-4 h-screen bg-background px-6 py-4 border-2 border-r-secondary">
     
-      <Header setSidebarVisible={setSidebarVisible} sidebarVisible={sidebarVisible} userName={"Tatiana"} />
+      <Header setSidebarVisible={setSidebarVisible} sidebarVisible={sidebarVisible} />
 
       <Sidebar 
           sidebarVisible={sidebarVisible} 
