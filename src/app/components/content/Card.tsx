@@ -17,15 +17,18 @@ const Card: React.FC<CardProps> = ({ title, icon, isPremium = false, isSelected 
                 ${isSelected ? "bg-primary" : "bg-tertiary"}`}
             onClick={onClick}
         >
-            {icon}
-            <p className={"text-xl font-bold mt-5 w-52 text-center"}>{title}</p>
-            {isPremium && (
-                <Button
-                    className={"absolute top-3 h-[30px] py-0 text-sm w-[173px]"}
-                    text={"Premium Feature"}
-                    style={"PREMIUM"}
-                />
-            )}
+            <div className={"flex flex-col items-center pt-2.5"}>
+                {icon}
+                <p className={"text-xl font-bold mt-5 w-52 text-center"}>{title}</p>
+                {isPremium && (
+                    <Button
+                        className={"absolute top-3 h-[30px] py-0 text-sm w-[173px]"}
+                        text={"Premium Feature"}
+                        style={"PREMIUM"}
+                    />
+                )}
+
+            </div>
         </div>
     );
 };

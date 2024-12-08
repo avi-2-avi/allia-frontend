@@ -3,8 +3,11 @@ import BaseLayout from "./shared/layouts/BaseLayout";
 import FeatureCard from "@/app/components/ui/FeatureCard";
 import Image from "next/image";
 import Generator from "@/app/components/content/Generator";
+import TrendingCard from "@/app/components/ui/TrendingCard";
 
 export default function Home() {
+    const today = new Date();
+    const todayDate = `${today.getMonth() + 1}/${today.getDate()}/${today.getFullYear()}`;
 
     // Feature data
     const features = [
@@ -27,6 +30,30 @@ export default function Home() {
             title: "Multi-format Export",
             description: "Generate content in various formats ready to share on any platform",
             icon: "/icons/Share.svg",
+        },
+    ]
+
+    // Trending data
+    const trendingTopics = [
+        {
+            title: "Artificial Intelligence",
+            description: "Explore the latest advancements and applications of AI across industries...",
+            percentage: 85,
+        },
+        {
+            title: "Sustainable Fashion",
+            description: "Discover eco-friendly fashion trends and sustainable style tips...",
+            percentage: 75,
+        },
+        {
+            title: "Crypto",
+            description: "Stay updated with the latest developments in cryptocurrency and decentralized web...",
+            percentage: 62,
+        },
+        {
+            title: "Bruno Mars & Rose",
+            description: "Unless you've been living under a rock, or somewhere with seriously dodgy Wi-F...",
+            percentage: 61,
         },
     ]
 
@@ -74,14 +101,48 @@ export default function Home() {
                 </div>
             </section>
             {/* Content Generator */}
-            <section className="min-h-screen">
+            <section className="min-h-screen py-20">
                 <h2 className="text-center">Content Generator</h2>
-                <p></p>
                 <p className={"text-xl text-foreground-secondary text-center mb-16 mt-3 mx-4"}>Try our AI-powered
                     content generator now</p>
                 <Generator/>
+                {/* TODO: Adjust preview (what functionality will it actually show? */}
+                <div className={"max-w-generator xl:max-w-full mx-auto mt-8 px-4 xl:px-0"}>
+                    <div className={"bg-tertiary p-10 rounded-3xl"}>
+                        <div className={"flex flex-row justify-between mb-14"}>
+                            <p className={"text-xl font-bold"}>Preview</p>
+                            <Button className={"w-44"} text={"Export"} style={"TERTIARY"}/>
+                        </div>
+                        <div className={"bg-tertiary-muted p-10 rounded-3xl xl:h-[540px] px-10"}>
+                            <p>Content preview</p>
+                        </div>
+                    </div>
+                </div>
             </section>
             {/* Trending */}
+            <section className="min-h-screen py-20">
+                <h2 className="text-center">Trending</h2>
+                <p className={"text-xl text-foreground-secondary text-center mb-16 mt-3 mx-4"}>Popular topics across
+                    various domains</p>
+                <p className={"text-primary font-bold text-center text-xl mb-8"}>Last scan: {todayDate}</p>
+                <div
+                    className={
+                        "grid grid-cols-1 lg:grid-cols-[repeat(2,_minmax(0,_max-content))] justify-items-center justify-center gap-5"
+                    }
+                >
+                    {
+                        trendingTopics.map((topic, index) => (
+                            <TrendingCard
+                                key={index}
+                                title={topic.title}
+                                description={topic.description}
+                                percentage={topic.percentage}
+                            />
+                        ))
+                    }
+                </div>
+
+            </section>
             {/* Pricing */}
         </BaseLayout>
     );

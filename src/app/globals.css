@@ -13,12 +13,15 @@
   --primary-muted: #20202E;
   --secondary: #262626;
   --tertiary: #171717;
+  --tertiary-muted: #0F0F0F;
   --accent: #3dffb5;
   --warning: #f59e0b;
   --warning-muted: #3b2a0d;
   --danger: #ef4444;
   --danger-muted: #3b0d0d;
   --input-border: #484848;
+
+  --generator-max-width: 650px;
 }
 
 body {
