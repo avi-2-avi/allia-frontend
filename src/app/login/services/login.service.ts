@@ -6,7 +6,7 @@ export const login = async (
   email: string,
   password: string
 ): Promise<
-  | { status: "success"; message: string; payload: { token: string } }
+  | { status: "success"; message: string; payload: { token: string; user: { id: string; fullName: string; email: string } } }
   | { status: "error"; message: string }
 > => {
   try {
@@ -17,7 +17,10 @@ export const login = async (
     return {
       status: "success",
       message: "Logged in successfully.",
-      payload: { token: response.data.access_token },
+      payload: {
+        token: response.data.access_token,
+        user: response.data.user,
+      },
     };
   } catch (error) {
     if (axios.isAxiosError(error) && error.response?.status === 401) {

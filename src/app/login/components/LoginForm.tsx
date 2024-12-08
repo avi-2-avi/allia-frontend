@@ -4,7 +4,7 @@ import Button from "@/app/components/ui/Button";
 import Input from "@/app/components/ui/Input";
 import Image from "next/image";
 import Link from "next/link";
-import { useLoginForm } from "../hooks/useLoginForm.hook";
+import { useLoginForm } from "../hooks/LoginForm.hook";
 
 const LoginForm = () => {
   const { emailRef, passwordRef, isLogging, onSubmit } = useLoginForm();
