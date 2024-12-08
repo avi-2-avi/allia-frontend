@@ -3,11 +3,14 @@
 @tailwind utilities;
 
 :root {
-  --background: #171717;
-  --foreground: #ffffff;
+  --background: #0A0A0A;
+  --foreground: #979EAB;
+  --white: #ffffff;
+  --black: #000000;
   --foreground-muted: #737373;
   --primary: #6b71fd;
   --secondary: #262626;
+  --tertiary: #171717;
   --accent: #3dffb5;
   --warning: #f59e0b;
   --warning-muted: #3b2a0d;
@@ -20,4 +23,51 @@ body {
   color: var(--foreground);
   background: var(--background);
   font-family: Arial, Helvetica, sans-serif;
+}
+
+h1 {
+  color: var(--accent);
+  text-align: center;
+  font-size: 60px;
+  font-style: normal;
+  font-weight: 500;
+  line-height: normal;
+}
+
+.subheading {
+  color: var(--foreground);
+  text-align: center;
+  font-size: 30px;
+  font-style: normal;
+  font-weight: 500;
+  line-height: normal;}
+
+h2 {
+  color: var(--accent);
+  text-align: center;
+  font-size: 40px;
+  font-style: normal;
+  font-weight: 700;
+  line-height: normal;
+}
+
+h3 {
+  color: var(--accent);
+  text-align: center;
+  font-size: 30px;
+  font-style: normal;
+  font-weight: 700;
+  line-height: normal;
+}
+
+h4 {
+  color: var(--accent);
+  font-size: 20px;
+  font-style: normal;
+  font-weight: 700;
+  line-height: normal;
+}
+
+p {
+
 }
