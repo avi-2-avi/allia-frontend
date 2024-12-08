@@ -20,14 +20,14 @@ const LoginForm = () => {
             <Button
               type="submit"
               className="self-center w-1/2"
-              text="Register"
+              text="Login"
               style={"PRIMARY"}
             />
 
             <span className="text-center text-foreground-secondary">
               Don’t have an account?{" "}
               <Link href={"/register"} className="text-accent">
-                Login
+                Register
               </Link>
             </span>
           </div>
