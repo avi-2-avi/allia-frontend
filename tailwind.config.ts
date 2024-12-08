@@ -18,7 +18,10 @@ export default {
             },
             white: "var(--white)",
             black: "var(--black)",
-            primary: "var(--primary)",
+            primary: {
+                DEFAULT: "var(--primary)",
+                muted: "var(--primary-muted)"
+            },
             secondary: "var(--secondary)",
             tertiary: "var(--tertiary)",
             accent: "var(--accent)",

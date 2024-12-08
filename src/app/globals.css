@@ -10,6 +10,7 @@
   --black: #000000;
   --foreground-muted: #737373;
   --primary: #6b71fd;
+  --primary-muted: #20202E;
   --secondary: #262626;
   --tertiary: #171717;
   --accent: #3dffb5;
@@ -67,8 +68,4 @@ h4 {
   font-style: normal;
   font-weight: 700;
   line-height: normal;
-}
-
-p {
-
 }
