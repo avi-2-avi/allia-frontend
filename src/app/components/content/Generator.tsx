@@ -51,7 +51,7 @@ const Generator: React.FC = () => {
 
       {/* Inputs Section */}
       <div className="space-y-10 w-full">
-        <div className="flex flex-col md:flex-row gap-6 items-center w-full">
+        <div className="flex flex-col md:flex-row gap-6 items-start w-full">
           <span className="flex items-baseline gap-6 w-full">
             {/* Prompt Input */}
             <div className="flex-grow w-full">
