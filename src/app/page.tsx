@@ -2,13 +2,14 @@ import Button from "./components/ui/Button";
 import BaseLayout from "./shared/layouts/BaseLayout";
 import FeatureCard from "@/app/components/ui/FeatureCard";
 import Image from "next/image";
+import ContentCard from "@/app/components/ui/ContentCard";
 
 export default function Home() {
 
     return (
         <BaseLayout>
             {/* Hero */}
-            <section className="flex h-screen items-center">
+            <section className="flex min-h-screen items-center py-20">
                 <div className={"max-w-[800px] mx-auto px-4"}>
                     <h1 className={"mb-10"}>Engage Your Audience with AI-Generated Content</h1>
                     <p className={"subheading mb-20"}>Create compelling content on any topic in seconds. Powered by AI,
@@ -21,7 +22,7 @@ export default function Home() {
                 </div>
             </section>
             {/* Features */}
-            <section className="h-5/6">
+            <section className="min-h-screen py-20">
                 <h2 className="text-center">Features</h2>
                 <p className={"text-xl text-foreground-secondary text-center mb-16 mt-3 mx-4"}>Everything you need to create
                     engaging content on any topic</p>
@@ -89,8 +90,53 @@ export default function Home() {
                 </div>
             </section>
             {/* Content Generator */}
-            <section className="">
-                <h2 className="text-3xl font-bold text-center">Content Generator</h2>
+            <section className="min-h-screen">
+                <h2 className="text-center">Content Generator</h2>
+                <p></p>
+                <p className={"text-xl text-foreground-secondary text-center mb-16 mt-3 mx-4"}>Try our AI-powered content generator now</p>
+                <div
+                    className={
+                        "grid grid-cols-1 sm:grid-cols-[repeat(2,_minmax(0,_max-content))] xl:grid-cols-[repeat(auto-fit,_minmax(0,_max-content))] justify-items-center justify-center gap-5"
+                    }
+                >
+                    <ContentCard isSelected title={"Text Content"} icon={
+                        <Image
+                            src={"/icons/Text.svg"}
+                            alt={"Text logo"}
+                            width={45}
+                            height={45}
+                        />
+                    }
+                    />
+                    <ContentCard isPremium title={"Short Video"} icon={
+                        <Image
+                            src={"/icons/Video.svg"}
+                            alt={"Video logo"}
+                            width={40}
+                            height={40}
+                        />
+                    }
+                    />
+                    <ContentCard isPremium title={"X Thread"} icon={
+                        <Image
+                            src={"/icons/X.svg"}
+                            alt={"X logo"}
+                            width={45}
+                            height={45}
+                        />
+                    }
+                    />
+                    <ContentCard title={"Meme"} icon={
+                        <Image
+                            src={"/icons/Ghost.svg"}
+                            alt={"Ghost logo"}
+                            width={45}
+                            height={50}
+                        />
+                    }
+                    />
+                </div>
+
             </section>
             {/* Trending */}
             {/* Pricing */}
