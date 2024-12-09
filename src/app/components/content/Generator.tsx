@@ -35,7 +35,7 @@ const Generator: React.FC = () => {
       className="mx-auto space-y-10 px-4"
     >
       {/* Cards Section */}
-      <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
+      <div className="grid grid-cols-2 lg:grid-cols-4 gap-6">
         {cards.map((card, index) => (
           <Card
             key={index}
@@ -50,38 +50,26 @@ const Generator: React.FC = () => {
       </div>
 
       {/* Inputs Section */}
-      <div className="space-y-10 w-full">
-        <div className="flex flex-col md:flex-row gap-6 items-start w-full">
-          <span className="flex items-baseline gap-6 w-full">
-            {/* Prompt Input */}
-            <div className="flex-grow w-full">
-              <p className="text-foreground-secondary mb-2">
-                Enter your prompt
-              </p>
-              <textarea
-                ref={promptRef}
-                className="w-full bg-secondary py-2 px-6 border border-input-border rounded-2xl appearance-none h-[42px]"
-                placeholder="Prompt"
-              />
-            </div>
-
-            {/* Tone Selector */}
-            <div className="min-w-[200px] w-full flex items-baseline">
-              <SelectInput
-                options={toneOptions}
-                label={"Tone"}
-                placeholder={"Professional"}
-                onChange={(option) => setSelectedTone(option.value)}
-              />
-            </div>
-          </span>
-          {/* Generate Button (visible in small screens) */}
-          <div className="block md:hidden w-full">
-            <Button text="Generate" style="PRIMARY" disabled={isGenerating} />
-          </div>
-
-          {/* Submit Button (hidden in small screens) */}
-          <div className="hidden md:flex">
+      <div className="flex flex-col md:flex-row gap-6 items-baseline">
+        <span className="w-full">
+          <label className="text-foreground-secondary" htmlFor="prompt">
+            Prompt
+          </label>
+          <textarea
+            ref={promptRef}
+            id="prompt"
+            className="w-full bg-secondary py-2 px-6 border border-input-border rounded-lg h-[42px]"
+            placeholder="Enter your prompt here..."
+          />
+        </span>
+        <span className="flex gap-6 w-full md:w-1/3 items-end">
+          <SelectInput
+            label="Tone"
+            options={toneOptions}
+            placeholder="Select a tone"
+            onChange={(option) => setSelectedTone(option.value)}
+          />
+          <div>
             <CircleButton
               type="submit"
               disabled={isGenerating}
@@ -95,7 +83,7 @@ const Generator: React.FC = () => {
               }
             />
           </div>
-        </div>
+        </span>
       </div>
     </form>
   );

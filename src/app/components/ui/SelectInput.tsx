@@ -24,9 +24,10 @@ const SelectInput = forwardRef<HTMLSelectElement, SelectInputProps>(
 
     return (
       <div className="w-full">
-        <p className="text-foreground-secondary mb-2">
+        <label className="text-foreground-secondary mb-1">
           {label ? label : placeholder}
-        </p>
+        </label>
+
         <div className="relative w-full">
           <select
             id={id}
