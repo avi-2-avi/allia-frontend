@@ -29,18 +29,18 @@ export const ProfileDropdownMenu = () => {
             />
           </svg>
         </MenuButton>
-        <MenuItems className="absolute right-0 mt-2 bg-white rounded-lg divide-y divide-gray-200 shadow-lg focus:outline-none z-50">
+        <MenuItems className="absolute right-0 bg-tertiary rounded-lg divide-y divide-gray-200 shadow-lg focus:outline-none z-50">
           <MenuItem>
             <button
               onClick={logout}
-              className="flex items-center whitespace-nowrap text-primary p-2 gap-1 "
+              className="flex items-center whitespace-nowrap text-white p-2 gap-1 "
             >
               <svg
                 xmlns="http://www.w3.org/2000/svg"
                 fill="none"
                 viewBox="0 0 24 24"
                 strokeWidth={1.5}
-                stroke="#6b71fd"
+                stroke="#FFFFFF"
                 className="size-6"
               >
                 <path
