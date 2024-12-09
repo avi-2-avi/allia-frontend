@@ -13,7 +13,10 @@ type AuthStore = {
 export const useAuthStore = create<AuthStore>()(persist(((set, get) => ({
   token: undefined,
   user: undefined,
-  login: (token: string, user: User) => set(() => ({ token, user })),
+  login: (token: string, user: User) => {
+    set(() => ({ token, user }))
+  },
+
   logout: () => set(() => ({ token: undefined, user: undefined })),
   isLoggedIn: () => get().token !== undefined,
 })), {

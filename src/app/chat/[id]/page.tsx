@@ -11,8 +11,10 @@ import Message from "@/app/components/ui/Message";
 
 const ChatPage = () => {
   const { user } = useAuthStore();
-  const [messages, setMessages] = useState<{ text: string; sender: 'user' | 'bot'; name: string }[]>([]);
-  const [input, setInput] = useState('');
+  const [messages, setMessages] = useState<
+    { text: string; sender: "user" | "bot"; name: string }[]
+  >([]);
+  const [input, setInput] = useState("");
   const [isTyping, setIsTyping] = useState(false);
   const [sidebarVisible, setSidebarVisible] = useState(false);
 
@@ -22,7 +24,7 @@ const ChatPage = () => {
     if (messagesEndRef.current) {
       messagesEndRef.current.scrollIntoView({ behavior: "smooth" });
     }
-  }, [messages]); 
+  }, [messages]);
 
   const handleSendMessage = (message: string) => {
     if (message.trim() === "") {
@@ -30,14 +32,19 @@ const ChatPage = () => {
       return;
     }
 
-    const newMessage: { text: string; sender: 'user' | 'bot'; name: string } = { text: message, sender: 'user', name: user?.fullName || 'User' };
+    const newMessage: { text: string; sender: "user" | "bot"; name: string } = {
+      text: message,
+      sender: "user",
+      name: user?.fullname || "User",
+    };
     const newMessages = [...messages, newMessage];
 
-    setInput('');
+    setInput("");
     setIsTyping(true);
 
     setTimeout(() => {
-      const botMessage: { text: string; sender: 'user' | 'bot'; name: string } = { text: "Bot response", sender: 'bot', name: 'Bot' };
+      const botMessage: { text: string; sender: "user" | "bot"; name: string } =
+        { text: "Bot response", sender: "bot", name: "Bot" };
       const updatedMessages = [...newMessages, botMessage];
       setMessages(updatedMessages);
       setIsTyping(false);
@@ -50,7 +57,10 @@ const ChatPage = () => {
 
   return (
     <div className="flex flex-col  gap-4 h-screen bg-background px-6 py-4">
-      <Header setSidebarVisible={setSidebarVisible} sidebarVisible={sidebarVisible} />
+      <Header
+        setSidebarVisible={setSidebarVisible}
+        sidebarVisible={sidebarVisible}
+      />
       <Sidebar
         sidebarVisible={sidebarVisible}
         setSidebarVisible={setSidebarVisible}

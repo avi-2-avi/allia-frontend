@@ -4,17 +4,20 @@ import "react-toastify/dist/ReactToastify.css";
 import Sidebar from "@/app/components/ui/Sidebar";
 import Header from "@/app/components/ui/Header";
 import Generator from "../components/content/Generator";
+import { useAuthStore } from "@/app/shared/stores/useAuthStore";
 
 type Chat = {
   id: string;
   messages: { text: string; sender: "user" | "bot" }[];
   date: string;
 };
-import Link from "next/link";
 
 const ChatPage = () => {
   const [activeChat, setActiveChat] = useState<Chat | null>(null);
   const [sidebarVisible, setSidebarVisible] = useState(false);
+
+  // Get user data from useAuthStore
+  const user = useAuthStore((state) => state.user);
 
   const chatHistory = [
     { id: 1, title: "Noticias de Tecnología", date: "2024-12-08" },
@@ -44,7 +47,7 @@ const ChatPage = () => {
       />
       <div className="flex h-full">
         <div className="flex-grow rounded-lg flex flex-col p-4 md:ml-64">
-          <h1>Hi there, !</h1>
+          <h1>Hi there, {user?.fullname ? user.fullname : "Guest"}!</h1>
           <p className="text-foreground-secondary text-xl text-center">
             Let’s transform today’s top stories into engaging content.
           </p>
