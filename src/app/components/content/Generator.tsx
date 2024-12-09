@@ -6,11 +6,7 @@ import Input from "@/app/components/ui/Input";
 import Button from "@/app/components/ui/Button";
 import SelectInput from "@/app/components/ui/SelectInput";
 
-interface GeneratorProps {
-    isDemo?: boolean
-}
-
-const Generator: React.FC<GeneratorProps> = ({isDemo = false}) => {
+const Generator = () => {
     const [selectedCard, setSelectedCard] = useState<string | null>(null);
 
     // Card data

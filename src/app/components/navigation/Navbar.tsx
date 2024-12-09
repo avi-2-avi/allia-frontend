@@ -94,16 +94,16 @@ const Navbar = () => {
             >
                 <ul className="text-right ml-auto">
                     <li className="flex flex-col py-4 space-y-2.5">
-                        <Link href="#lorem_ipsum" className="font-light hover:text-accent">
+                        <Link href="#" className="font-light hover:text-accent">
                             Features
                         </Link>
-                        <Link href="#lorem_ipsum" className="font-light hover:text-accent">
+                        <Link href="#" className="font-light hover:text-accent">
                             Try Demo
                         </Link>
-                        <Link href="#lorem_ipsum" className="font-light hover:text-accent">
+                        <Link href="#" className="font-light hover:text-accent">
                             Trends
                         </Link>
-                        <Link href="#lorem_ipsum" className="font-light hover:text-accent">
+                        <Link href="#" className="font-light hover:text-accent">
                             Plans
                         </Link>
                     </li>
