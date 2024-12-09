@@ -1,5 +1,5 @@
 "use client";
-import React, { useState } from "react";
+import React, { useState, useRef, useEffect } from "react";
 import { ToastContainer, toast } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
 import ChatPrompt from "@/app/components/form/ChatPrompt";
@@ -15,8 +15,14 @@ const ChatPage = () => {
   const [input, setInput] = useState('');
   const [isTyping, setIsTyping] = useState(false);
   const [sidebarVisible, setSidebarVisible] = useState(false);
- 
-  
+
+  const messagesEndRef = useRef<HTMLDivElement | null>(null);
+
+  useEffect(() => {
+    if (messagesEndRef.current) {
+      messagesEndRef.current.scrollIntoView({ behavior: "smooth" });
+    }
+  }, [messages]); 
 
   const handleSendMessage = (message: string) => {
     if (message.trim() === "") {
@@ -35,13 +41,10 @@ const ChatPage = () => {
       const updatedMessages = [...newMessages, botMessage];
       setMessages(updatedMessages);
       setIsTyping(false);
-
-    
     }, 1500);
   };
 
   const handleChatSelect = (chat: Chat) => {
-  
     setMessages(chat.messages);
   };
 
@@ -54,11 +57,13 @@ const ChatPage = () => {
         handleChatSelect={handleChatSelect}
       />
       <ToastContainer />
+      
       <div className="h-full gap-6 rounded-lg flex flex-col p-4 lg:ml-64">
-        <div className="flex-grow  p-4 h-96 sidebar-scroll  w-full overflow-y-auto space-y-3">
+        <div className="flex-grow p-4 h-96 sidebar-scroll w-full overflow-y-auto space-y-3">
           {messages.map((message, index) => (
             <Message key={index} message={message} />
           ))}
+          <div ref={messagesEndRef} />
         </div>
         <ChatPrompt onSendMessage={handleSendMessage} />
       </div>
