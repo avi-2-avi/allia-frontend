@@ -10,6 +10,7 @@ type Chat = {
   messages: { text: string; sender: "user" | "bot" }[];
   date: string;
 };
+import Link from "next/link";
 
 const ChatPage = () => {
   const [activeChat, setActiveChat] = useState<Chat | null>(null);

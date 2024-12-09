@@ -49,7 +49,7 @@ const ChatPage = () => {
   };
 
   return (
-    <div className="flex flex-col gap-4 h-screen bg-background px-6 py-4">
+    <div className="flex flex-col  gap-4 h-screen bg-background px-6 py-4">
       <Header setSidebarVisible={setSidebarVisible} sidebarVisible={sidebarVisible} />
       <Sidebar
         sidebarVisible={sidebarVisible}
@@ -57,9 +57,9 @@ const ChatPage = () => {
         handleChatSelect={handleChatSelect}
       />
       <ToastContainer />
-      
+
       <div className="h-full gap-6 rounded-lg flex flex-col p-4 lg:ml-64">
-        <div className="flex-grow p-4 h-96 sidebar-scroll w-full overflow-y-auto space-y-3">
+        <div className="flex-grow p-4 h-80 sidebar-scroll w-full overflow-y-auto space-y-3">
           {messages.map((message, index) => (
             <Message key={index} message={message} />
           ))}
