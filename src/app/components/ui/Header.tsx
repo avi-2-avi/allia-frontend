@@ -2,6 +2,7 @@
 import React, { useEffect, useState } from "react";
 import { BiChevronDown, BiMenu, BiX } from "react-icons/bi";
 import { useAuthStore } from "@/app/shared/stores/useAuthStore";
+import { ProfileDropdownMenu } from "./ProfileDropdownMenu";
 
 interface HeaderProps {
   setSidebarVisible: (visible: boolean) => void;
@@ -45,13 +46,7 @@ const Header: React.FC<HeaderProps> = ({
       </div>
 
       <div className="flex gap-2 items-center">
-        <div className="flex items-center gap-2">
-          <div className="bg-accent p-1 rounded-full flex items-center justify-center text-white text-lg font-bold w-10 h-10">
-            {userName?.charAt(0).toUpperCase()}
-          </div>
-          <div className="hidden md:block">{userName}</div>
-          <BiChevronDown size={24} />
-        </div>
+        <ProfileDropdownMenu />
 
         {/* Menu toggle for small screens */}
         {isSmallScreen && (
