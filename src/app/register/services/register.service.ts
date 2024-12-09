@@ -17,7 +17,19 @@ export const register = async ({
       email,
       password,
     });
-    return response.data;
+
+
+    if (response.status === 201) {
+      return {
+        status: "success",
+        message: "User registered successfully!",
+      };
+    }
+
+    return {
+      status: "error",
+      message: "Unexpected response from server.",
+    };
   } catch (error) {
     if (axios.isAxiosError(error)) {
       return {
