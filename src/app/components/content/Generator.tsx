@@ -4,7 +4,6 @@ import Card from "@/app/components/content/Card";
 import Image from "next/image";
 import SelectInput from "@/app/components/ui/SelectInput";
 import CircleButton from "../ui/CircleButton";
-import Button from "../ui/Button";
 import { useGenerateContent } from "@/app/chat/hooks/useGenerateContent.hook";
 
 const Generator: React.FC = () => {
@@ -62,7 +61,7 @@ const Generator: React.FC = () => {
             placeholder="Enter your prompt here..."
           />
         </span>
-        <span className="flex gap-6 w-full md:w-1/3 items-end">
+        <span className="flex gap-6 w-full md:max-w-[250px] items-end">
           <SelectInput
             label="Tone"
             options={toneOptions}

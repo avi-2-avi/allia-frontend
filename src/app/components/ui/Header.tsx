@@ -8,21 +8,23 @@ interface HeaderProps {
   sidebarVisible: boolean;
 }
 
-const Header: React.FC<HeaderProps> = ({ setSidebarVisible, sidebarVisible }) => {
+const Header: React.FC<HeaderProps> = ({
+  setSidebarVisible,
+  sidebarVisible,
+}) => {
   const [isSmallScreen, setIsSmallScreen] = useState(false);
   const [showMenu, setShowMenu] = useState(false);
 
-  const userName = useAuthStore((state) => state.user?.fullName);
+  const userName = useAuthStore((state) => state.user?.fullname);
 
-  // Detect screen size on load and window resize
   useEffect(() => {
     const handleResize = () => {
-      const isSmall = window.innerWidth < 1024; // Small screen if width < 1024px
+      const isSmall = window.innerWidth < 1024;
       setIsSmallScreen(isSmall);
-      setSidebarVisible(!isSmall); // Auto-open sidebar on large screens
+      setSidebarVisible(!isSmall);
     };
 
-    handleResize(); // Check on mount
+    handleResize();
     window.addEventListener("resize", handleResize);
 
     return () => {
@@ -32,7 +34,7 @@ const Header: React.FC<HeaderProps> = ({ setSidebarVisible, sidebarVisible }) =>
 
   const toggleSidebar = () => {
     if (isSmallScreen) {
-      setSidebarVisible(!sidebarVisible); // Toggle sidebar visibility
+      setSidebarVisible(!sidebarVisible);
     }
   };
 
@@ -53,7 +55,10 @@ const Header: React.FC<HeaderProps> = ({ setSidebarVisible, sidebarVisible }) =>
 
         {/* Menu toggle for small screens */}
         {isSmallScreen && (
-          <div onClick={toggleSidebar} className="block lg:hidden">
+          <div
+            onClick={toggleSidebar}
+            className="block lg:hidden cursor-pointer"
+          >
             {sidebarVisible ? <BiX size={30} /> : <BiMenu size={30} />}
           </div>
         )}

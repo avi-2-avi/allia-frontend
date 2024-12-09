@@ -16,7 +16,6 @@ const ChatPage = () => {
   const [activeChat, setActiveChat] = useState<Chat | null>(null);
   const [sidebarVisible, setSidebarVisible] = useState(false);
 
-  // Get user data from useAuthStore
   const user = useAuthStore((state) => state.user);
 
   const chatHistory = [
@@ -35,7 +34,7 @@ const ChatPage = () => {
   );
 
   return (
-    <div className="flex flex-col gap-4 h-screen bg-background px-6 py-4 ">
+    <div className="mx-auto max-w-[1320px] scroll-smooth flex flex-col gap-4 h-screen bg-background px-6 py-4 ">
       <Header
         setSidebarVisible={setSidebarVisible}
         sidebarVisible={sidebarVisible}
