@@ -72,3 +72,17 @@ h4 {
   font-weight: 700;
   line-height: normal;
 }
+
+
+.sidebar-scroll {
+  overflow-y: scroll;  
+}
+
+.sidebar-scroll {
+  scrollbar-width: thin;  
+  scrollbar-color: #888 transparent; 
+}
+
+.sidebar-scroll:hover {
+  scrollbar-color: #555 transparent;  
+}
